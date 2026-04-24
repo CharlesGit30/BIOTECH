@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,14 +14,44 @@
     
     <?php  include '../includes/header.php'; ?>
 
+    <?php 
+        include '../config.php';
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $email = $_POST['email'];
+            $senha = $_POST['senha'];
+
+           $instrucao = $conexao->prepare("SELECT * FROM responsaveis WHERE email = ?");
+
+            $instrucao->bind_param('s', $email);
+            $instrucao->execute();
+            
+            $resultado = $instrucao->get_result();
+            $usuario = $resultado->fetch_assoc();
+
+            if ($usuario && password_verify($senha, $usuario['senha'])) {
+                $_SESSION["usuario_id"] = $usuario["id"];
+                $_SESSION["usuario_nome"] = $usuario["nome"];
+
+                header("Location: ../visual/dashboard.php");
+                exit;
+            } else {
+                echo "Email ou Senha Invalidos!";
+            }
+
+        }
+    ?>
+
     <div class="login">
         <h2>ACESSO RESTRITO</h2>
-        <div class="logo"><img src="" alt="Logo da biotech"></div>
+        <div class="logo"><img src="../imagens/Saúde, azul, coração, logotipo_20260424_103306_0000~2.png" alt="Logo da biotech"></div>
 
-        <form action="../processamento/autenticacao.php" method="POST">
-            <input type="text" name="usuario" placeholder="Usuario" required>
+        <form method="POST">
+            <input type="text" name="email" placeholder="email" required>
             <input type="password" name="senha" placeholder="Senha" required>
             <button type="submit">Entrar</button>
+
+            <a href="../visual/cadastro.php">Cadastrar</a>
         </form>
 
     </div>
