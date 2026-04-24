@@ -1,3 +1,5 @@
+<?php session_start()?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,12 +17,12 @@
     
     <header>
         <div class="logo">
-            <img src="" alt="Logo da biotech">
+            <img src="../imagens/Saúde, azul, coração, logotipo_20260424_103306_0000~2.png" alt="Logo da biotech">
         </div>
 
         <div class="navbar">
             <ul>
-                <li><a href="">DashBoard</a>
+                <li><a href="">Inicio</a>
                     <a href="">Receita</a>
                     <a href="">Medicamentos</a>
                     <a href="">Relatorios</a>
