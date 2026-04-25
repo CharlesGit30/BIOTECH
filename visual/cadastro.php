@@ -31,16 +31,18 @@
     ?>    
 
 <div class="cadastro">
-    <h2>Acesso Restrito</h2><br><br>
+    <h2>ACESSO RESTRITO</h2><br><br>
+    <div class="logo"><img src="../visual/logo.png" alt="Logo da biotech"></div>
     <form method="POST">
-         <div class="logo"><img src="" alt="Logo da biotech"></div>
-        <input type="text" name="nome" placeholder="Nome" required><br>
-        <input type="text" name="email" placeholder="Email" required><br>
-        <input type="password" name="senha" placeholder="Senha"><br>
+        <input type="text" name="nome" placeholder="Nome" required class="c-input"><br>
+        <input type="text" name="email" placeholder="Email" required class="c-input"><br>
+        <input type="password" name="senha" placeholder="Senha" required class="c-input"><br>
         <button type="submit">Cadastrar</button>
+
+        <a href="../visual/login.php" class="btn">Já tem uma conta? Faça login aqui.</a>
     </form>
 </div>
     
-
+<?php include "../includes/footer.php"; ?>
 </body>
 </html>

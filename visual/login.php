@@ -44,14 +44,14 @@
 
     <div class="login">
         <h2>ACESSO RESTRITO</h2>
-        <div class="logo"><img src="../imagens/Saúde, azul, coração, logotipo_20260424_103306_0000~2.png" alt="Logo da biotech"></div>
+        <div class="logo"><img src="../visual/logo.png" alt="Logo da biotech"></div>
 
         <form method="POST">
             <input type="text" name="email" placeholder="email" required>
             <input type="password" name="senha" placeholder="Senha" required>
             <button type="submit">Entrar</button>
 
-            <a href="../visual/cadastro.php">Cadastrar</a>
+            <a href="../visual/cadastro.php" class="btn">Não tem uma conta? Cadastre-se aqui.</a>
         </form>
 
     </div>
