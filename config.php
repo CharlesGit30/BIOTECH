@@ -1,13 +1,8 @@
-<?php 
-    $host = "localhost";
-    $usuario = "root";
-    $senha = "";
-    $banco = "biotech";
+<?php  
+$host = 'localhost';
+$usuario = 'root';
+$senha = '';
+$banco = 'laudo';
 
-    $conexao = new mysqli($host, $usuario, $senha, $banco);
-
-    if ($conexao->connect_error) {
-        die("Falha na conexão: " . $conexao->connect_error);
-    }
-
-?>
+$conexao = new mysqli($host, $usuario, $senha, $banco )
+ ?>
