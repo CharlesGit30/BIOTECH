@@ -1,39 +1,32 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-</head>
-<body>
-    
-
 <?php 
-    session_start();
-    include "../config.php";
+    include 'config.php';
 
-    $nome = $_POST['nome'];
-    $fabricante = $_POST['fabricante'];
-    $tipo = $_POST['tipo'];
-    $quantidade = $_POST['quantidade'];
-    $validade = $_POST['validade'];
-    $composicao = $_POST['composicao'];
-    $data_registro = $_POST['data_registro'];
+    if ($_SERVER['REQUEST_METHOD'] === "POST") {
+        
+        $paciente = $_POST['paciente'];
+        $medico = $_POST['medico'];
+        $exame = $_POST['exame'];
+        $data_laudo = $_POST['data_laudo'];
+        $diagnostico = $_POST['diagnostico'];
+        $observacao = $_POST['observacao'];
 
-    $instrucao = $conexao->prepare("INSERT INTO medicamentos (nome, fabricante, tipo, quantidade, validade, composicao, data_registro) VALUES (?, ?, ?, ?, ?, ?, ?)");    
-    $instrucao->bind_param("ssssssss", $nome, $fabricante, $tipo, $quantidade, $validade, $composicao, $data_registro);
-    $instrucao->execute();
+        $acao = $conexao->prepare("INSERT INTO laudos (paciente, medico, exame, data_laudo, diagnostico, observacao) VALUES (?, ?, ?, ?, ?, ?)");
+        $acao->bind_param("ssssss", $paciente, $medico, $exame, $data_laudo, $diagnostico, $observacao);
+        $acao->execute();
 
-    if($instrucao->num_rows > 0){
-        $_SESSION['mensagem'] = "Medicamento cadastrado com sucesso!";
-        header("Location: ../dashboard.php");
-    } else {
-        $_SESSION['mensagem'] = "Erro ao cadastrar medicamento.";
-        header("Location: ../dashboard.php");
+        header("Location: listar.php");
     }
-    $instrucao->close();
-    $conexao->close();
 ?>
 
-</body>
-</html>
+<h2>Laudo Medico</h2>
+
+<form method="POST">
+    Paciente: <input type="text" name="paciente" >
+    Medico: <input type="text" name="medico" >
+    Exame: <input type="text" name="exame" >
+    Data do Exame: <input type="date" name="data_laudo"> 
+    Diagnostico: <textarea name="diagnostico"></textarea>
+    Observacoes: <textarea name="observacao"></textarea>
+
+    <button type="submit">Cadastrar</button>
+</form>
