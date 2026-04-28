@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+include '../config.php';
 
 $id = $_GET['id'];
 
@@ -23,14 +23,26 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $update->bind_param("ssssssi", $paciente, $medico, $exame, $data_laudo, $diagnostico, $observacao, $id);
     $update->execute();
 
-    header("Location: listar.php");
+    header("Location: ../processamento/listar.php");
     exit;
 }
 ?>
 
-<h2>Editar Laudo</h2>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIOTECH -> Editar Laudo</title>
+    <link rel="stylesheet" href="../includes/style.css">
+</head>
+<body>  
 
-<form method="POST">
+<?php include "../includes/header.php"; ?>
+<h2 class="editar-laudo">Editar Laudo</h2>
+
+<div class="formulario">
+    <form method="POST">
     Paciente: <input type="text" name="paciente" value="<?= $laudo['paciente'] ?>"><br>
     Médico: <input type="text" name="medico" value="<?= $laudo['medico'] ?>"><br>
     Exame: <input type="text" name="exame" value="<?= $laudo['exame'] ?>"><br>
@@ -40,3 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     <button type="submit">Salvar</button>
 </form>
+</div>
+
+</body>
+</html>
+
