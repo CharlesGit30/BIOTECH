@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header -> Biotech</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../BIOTECH-main/includes/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,15 +17,15 @@
     
     <header>
         <div class="logo">
-            <img src="../imagens/Saúde, azul, coração, logotipo_20260424_103306_0000~2.png" alt="Logo da biotech">
+            <img src="../img/biotech.png" alt="Logo da biotech" width="100px" height="100px">
         </div>
 
         <div class="navbar">
             <ul>
-                <li><a href="">Inicio</a>
-                    <a href="">Receita</a>
-                    <a href="">Medicamentos</a>
-                    <a href="">Relatorios</a>
+                <li><a href="../index.php">Inicio</a>
+                    <a href="../BIOTECH-main/processamento/receita.php">Receita</a>
+                    <a href="../BIOTECH-main/processamento/medicamentos.php">Medicamentos</a>
+                    <a href="../BIOTECH-main/processamento/relatorios.php">Relatorios</a>
                 </li>
             </ul>
         </div>
