@@ -24,6 +24,10 @@ body {
     background-color: var(--cor-fundo);
 }
 
+html {
+    scroll-behavior: smooth;
+
+}
 /*-------------------------------------*/
 
 header {
@@ -37,6 +41,7 @@ header {
     align-items: center;
     justify-content: space-between;
     box-shadow: var(--sombra);
+    position: fixed;
 }
 
 header .logo {
@@ -185,6 +190,7 @@ footer {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 102, 51, 0.15);
+    margin-top: 50px;
 }
 
 .inicio-img img {
@@ -898,3 +904,6 @@ table tr:nth-child(even) {
     height: 600px;
     margin-left: 490px;
 }
+
+/*-----------------------------------------*/
+

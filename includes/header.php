@@ -1,4 +1,3 @@
-<?php session_start()?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,13 +16,13 @@
     
     <header>
         <div class="logo">
-            <img src="../img/biotech.png" alt="Logo da biotech" width="100px" height="100px">
+           <img src="../BIOTECH-main/img/biotech.png" alt="Logo da biotech" width="100px" height="100px"></img>
         </div>
 
         <div class="navbar">
             <ul>
                 <li><a href="../index.php">Inicio</a>
-                    <a href="../BIOTECH-main/processamento/receita.php">Receita</a>
+                    <a href="../BIOTECH-main/processamento/listar.php">Laudos</a>
                     <a href="../BIOTECH-main/processamento/medicamentos.php">Medicamentos</a>
                     <a href="../BIOTECH-main/processamento/relatorios.php">Relatorios</a>
                 </li>
@@ -31,8 +30,8 @@
         </div>
 
         <div class="header-icons">
-            <a href=""><i class='bx bx-user'></i></a>
-            <a href=""><i class='bx bx-log-out'></i></a>
+            <a href="../BIOTECH-main/visual/login.php"><i class='bx bx-user'></i></a>
+            <a href="../BIOTECH-main/visual/logout.php"><i class='bx bx-log-out'></i></a>
         </div>
         
     </header>
