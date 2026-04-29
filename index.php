@@ -13,9 +13,10 @@
 <body>
     <?php include "../BIOTECH-main/includes/header.php" ?>
 
+
     <div class="inicio">
         <div class="inicio-img">
-            <img src="../BIOTECH-main/img/banner1.jpg" alt="Banner">
+            <img src="../BIOTECH-main/img/banner2.jpg" alt="Banner">
             <div class="inicio-text">
                 <h2>BIOTECH</h2>
                 <p>Seu app reúne laudos digitais e controle de estoque em um único lugar, para que a equipe médica emita diagnósticos em segundos enquanto a farmácia acompanha cada comprimido que entra e sai, sem planilhas e sem sustos no fim do mês.</p>
@@ -68,5 +69,6 @@
     </div>
 
     <?php include "../BIOTECH-main/includes/footer.php"; ?>
+
 </body>
 </html>
