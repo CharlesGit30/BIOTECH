@@ -18,7 +18,9 @@
 
     <section class="page-hero home-hero">
         <div class="hero-copy hero-copy-simple">
-            <div class="hero-logo">BioTech</div>
+            <div class="hero-logo">
+                <img src="/login/logo.png" alt="BioTech logo">
+            </div>
             <div class="hero-actions">
                 <a href="/processamento/criar.php" class="btn-primary">Criar Laudo</a>
                 <a href="/processamento/listar.php" class="btn-secondary">Meus Laudos</a>

@@ -769,17 +769,19 @@ textarea:focus {
 }
 
 button[type="submit"] {
-    width: 100%;
-    padding: 16px 20px;
+    width: auto;
+    min-width: 260px;
+    padding: 16px 34px;
     background-color: var(--cor-texto);
     color: var(--cor-fundo);
     border: none;
     cursor: pointer;
     font-size: 16px;
     font-weight: 700;
-    margin-top: 20px;
+    margin: 20px auto 0;
     border-radius: 18px;
     box-shadow: 0 18px 38px rgba(0, 84, 33, 0.14);
+    display: block;
 }
 
 button[type="submit"]:hover {
@@ -1168,10 +1170,13 @@ form button:hover {
 }
 
 .hero-logo {
-    font-size: clamp(2.4rem, 3vw, 3.8rem);
-    font-weight: 800;
-    color: #ffffff;
-    letter-spacing: 0.12em;
+    width: 240px;
+}
+
+.hero-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .page-hero h1,
@@ -1216,17 +1221,18 @@ form button:hover {
 }
 
 .btn-primary,
-.btn-cta,
-.btn-secondary {
+.btn-cta {
     color: var(--cor-fundo);
-    background: linear-gradient(135deg, #0d5c2c 0%, #0b4c27 100%);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: linear-gradient(135deg, #0d5c2c 0%, #0a5a2a 100%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 18px 35px rgba(9, 82, 36, 0.18);
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.12);
     color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .btn-secondary:hover,
