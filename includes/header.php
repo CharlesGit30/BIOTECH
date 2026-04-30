@@ -16,7 +16,7 @@
     
     <header>
         <div class="logo">
-           <img src="../BIOTECH-main/img/biotech.png" alt="Logo da biotech" width="100px" height="100px"></img>
+           <img src="/login/logo.png" alt="Logo da biotech" width="100px" height="100px"></img>
         </div>
 
         <div class="navbar">
