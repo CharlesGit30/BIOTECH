@@ -6,21 +6,22 @@
 
   
 
-    if ($_SERVER['REQUEST_METHOD'] === "POST") {
-        
-        $paciente = $_POST['paciente'];
-        $medico = $_POST['medico'];
-        $exame = $_POST['exame'];
-        $data_laudo = $_POST['data_laudo'];
-        $diagnostico = $_POST['diagnostico'];
-        $observacao = $_POST['observacao'];
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
-        $acao = $conexao->prepare("INSERT INTO laudos (paciente, medico, exame, data_laudo, diagnostico) VALUES (?, ?, ?, ?, ?)");
-        $acao->bind_param("sssss", $paciente, $medico, $exame, $data_laudo, $diagnostico);
-        $acao->execute();
+    $paciente = $_POST['paciente'];
+    $medico = $_POST['medico'];
+    $exame = $_POST['exame'];
+    $data_laudo = $_POST['data_laudo'];
+    $diagnostico = $_POST['diagnostico'];
+    $observacao = $_POST['observacao'];
 
-        header("Location: ../processamento/listar.php");
-    }
+    $acao = $conexao->prepare("INSERT INTO laudos (paciente, medico, exame, data_laudo, diagnostico, observacao) VALUES (?, ?, ?, ?, ?, ?)");
+    $acao->bind_param("ssssss", $paciente, $medico, $exame, $data_laudo, $diagnostico, $observacao);
+    $acao->execute();
+
+    header("Location: /processamento/listar.php");
+    exit;
+}
 ?>
 
 <!DOCTYPE html>

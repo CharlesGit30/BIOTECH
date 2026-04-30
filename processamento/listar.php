@@ -1,7 +1,6 @@
 <?php session_start()?>
 <?php
     include "../config/config.php";
-    include "../includes/header.php";
 
     $resultado = $conexao->query("SELECT * FROM laudos ORDER BY data_laudo DESC");
 ?>
@@ -12,23 +11,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BIOTECH -> Listar Laudos</title>
-    <link rel="stylesheet" href="../includes/style.css">
+    <link rel="stylesheet" href="/includes/style.css">
 </head>
 <body>
-    <h2 class="criar-laudo">Lista de Laudos</h2>
-<a href="../processamento/criar.php" class="novo-laudo">Novo Laudo</a>
+    <?php include "../includes/header.php"; ?>
+<main class="laudos-page">
 
-<div class="formulario">
-<table border="1" cellpadding="8">
+    <section class="laudos-header">
+        <div>
+            <span class="laudos-subtitle">Gestão de laudos</span>
+            <h2>Lista de Laudos</h2>
+            <p>Visualize, edite ou exclua os laudos cadastrados no sistema.</p>
+        </div>
+
+        <a href="/processamento/criar.php" class="novo-laudo">+ Novo Laudo</a>
+    </section>
+
+    <section class="laudos-card">
+        <div class="table-responsive">
+            <table class="laudos-table">
     <tr>
         <th>ID</th>
         <th>Paciente</th>
-        <th>Medico</th>
+        <th>Médico</th>
         <th>Exame</th>
         <th>Data do Laudo</th>
-        <th>Diagnostico</th>
-        <th>Alterar</th>
-        <th>Excluir</th>       
+        <th>Diagnóstico</th>
+        <th>Ações</th>
+          
     </tr>
 </div>
 
@@ -38,20 +48,21 @@
     ?>
 
     <tr>
-        <td><?= $row['id']?></td>
-        <td><?= $row['paciente']  ?></td>
-        <td><?= $row['medico']  ?></td>
-        <td><?= $row['exame']  ?></td>
-        <td><?= $row['data_laudo']  ?></td>
-        <td><?= $row['diagnostico']  ?></td> 
-        <td><a href="editar.php?id=<?= $row['id'] ?>" class="editar-laudo">Editar</a></td>
-        <td><a href="excluir.php?id=<?= $row['id'] ?>" class="excluir-laudo">Excluir</a></td>   
+       <td class="id-col">#<?= $row['id'] ?></td>
+         <td><?= htmlspecialchars($row['paciente']) ?></td>
+         <td><?= htmlspecialchars($row['medico']) ?></td>
+         <td><?= htmlspecialchars($row['exame']) ?></td>
+         <td><?= date('d/m/Y', strtotime($row['data_laudo'])) ?></td>
+         <td><?= htmlspecialchars($row['diagnostico']) ?></td>
+         <td class="acoes-laudo">
+         <a href="editar.php?id=<?= $row['id'] ?>" class="editar-laudo">Editar</a>
+         <a href="excluir.php?id=<?= $row['id'] ?>" class="excluir-laudo" onclick="return confirm('Tem certeza que deseja excluir este laudo?')">Excluir</a>
+        </td>
     </tr>
-    <?php endwhile; ?>
-
-
-</table>
-
+           </table>
+            </div>
+        </section>
+    </main>
 <?php include "../includes/footer.php"; ?>
 </body>
 </html>
