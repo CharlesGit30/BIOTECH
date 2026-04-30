@@ -592,154 +592,88 @@ button:active {
 
 /*---------------------------------------------*/
 
-.card {
-    background: linear-gradient(135deg, var(--cor-fundo) 0%, #f9f9f9 100%);
-    padding: 40px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border: 2px solid transparent;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
+.card,
 .card-2 {
-    background: linear-gradient(135deg, var(--cor-fundo) 0%, #f9f9f9 100%);
-    padding: 40px;
-    border-radius: 12px;
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 22px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border: 2px solid transparent;
-    height: 100%;
+    box-shadow: 0 24px 60px rgba(4, 40, 22, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    border: 1px solid rgba(21, 61, 35, 0.08);
+    min-height: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-
+.card:hover,
+.card-2:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 70px rgba(4, 40, 22, 0.12);
+}
 
 .card-icon {
-    font-size: 60px;
+    font-size: 52px;
     color: var(--cor-texto);
     margin-bottom: 20px;
-    transition: all 0.4s ease;
 }
 
-
-
-.card h3 {
-    font-size: 24px;
-    color: var(--cor-texto);
-    margin-bottom: 15px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-}
-
-
+.card h3,
 .card-2 h3 {
-    font-size: 24px;
+    font-size: 1.9rem;
     color: var(--cor-texto);
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     font-weight: 700;
-    letter-spacing: -0.5px;
 }
 
-.card p {
-    font-size: 14px;
-    color: var(--cor-texto2);
-    line-height: 1.6;
-    margin-bottom: 25px;
-    opacity: 0.8;
-}
-
+.card p,
 .card-2 p {
-    font-size: 14px;
-    color: var(--cor-texto2);
-    line-height: 1.6;
-    margin-bottom: 25px;
-    opacity: 0.8;
+    font-size: 0.98rem;
+    color: #455b4a;
+    line-height: 1.75;
+    margin-bottom: 24px;
 }
 
 .btn-card {
-    display: inline-block;
-    background: linear-gradient(135deg, var(--cor-texto) 0%, #004d26 100%);
-    padding: 12px 35px;
+    display: inline-flex;
+    background: linear-gradient(135deg, #0a5b2d 0%, #0f6838 100%);
+    padding: 14px 32px;
     color: var(--cor-fundo);
     text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 14px;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border: 2px solid var(--cor-texto);
-    cursor: pointer;
-    box-shadow: 0 6px 15px rgba(0, 102, 51, 0.2);
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 18px 32px rgba(15, 86, 44, 0.18);
     margin-top: auto;
 }
 
+.btn-card:hover {
+    transform: translateY(-2px);
+}
 
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 28px;
+    padding: 40px 7%;
+    background-color: var(--cor-fundo);
+}
 
-
-@media (max-width: 768px) {
+@media (max-width: 980px) {
     .container {
-        flex-direction: column;
-        padding: 30px 4%;
-    }
-
-    .card {
-        padding: 30px;
-    }
-
-    .card-icon {
-        font-size: 50px;
-    }
-
-    .card h3 {
-        font-size: 20px;
-    }
-
-    .card p {
-        font-size: 13px;
-    }
-
-    .btn-card {
-        padding: 11px 30px;
-        font-size: 13px;
+        grid-template-columns: 1fr;
+        padding: 32px 6%;
     }
 }
 
-@media (max-width: 480px) {
-    .card {
-        padding: 25px;
-    }
-
-    .card-icon {
-        font-size: 45px;
-        margin-bottom: 15px;
-    }
-
-    .card h3 {
-        font-size: 18px;
-        margin-bottom: 12px;
-    }
-
-    .card p {
-        font-size: 12px;
-        margin-bottom: 20px;
-    }
-
-    .btn-card {
-        padding: 10px 25px;
-        font-size: 12px;
+@media (max-width: 640px) {
+    .container {
+        padding: 24px 4%;
     }
 }
-
-/*-----------------------------------------*/
 
 .informacoes {
     padding: 40px 7%;
@@ -758,10 +692,7 @@ button:active {
     }
 }
 
-/*-----------------------------------------*/
-
-.criar-laudo{
-  
+.criar-laudo {
     font-size: 40px;
     font-weight: 700;
     color: var(--cor-texto);
@@ -770,39 +701,38 @@ button:active {
     margin: 0 auto;
 }
 
-.card{
-    background-image: url(../includes/imagens/laudo-img.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.card {
+    background: linear-gradient(180deg, #ffffff 0%, #f4f6f2 100%);
 }
 
-.card-2{
-    background-image: url(../includes/imagens/editarlaudo-img.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.card-2 {
+    background: linear-gradient(180deg, #ffffff 0%, #f4f6f2 100%);
 }
 
 .novo-laudo {
     display: inline-block;
     background: var(--cor-texto);
-    padding: 20px 30px;
+    padding: 18px 28px;
     color: var(--cor-fundo);
     text-decoration: none;
-    border-radius: 15px;
-    font-weight: 600;
-    font-size: 16px;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border: 2px solid var(--cor-fundo);
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(0, 102, 51, 0.25);
+    box-shadow: 0 14px 30px rgba(15, 86, 44, 0.12);
+}
+
+.novo-laudo:hover {
+    transform: translateY(-2px);
 }
 
 table {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    border-collapse: separate;
+    border-spacing: 0 16px;
+    margin-top: 24px;
 }
 
 label {
@@ -810,62 +740,151 @@ label {
     margin-top: 10px;
     font-weight: 600;
     color: var(--cor-texto);
-    margin-left: 20px;
+}
+
+textarea,
+input {
+    width: 100%;
+    padding: 14px 18px;
+    margin-top: 8px;
+    border-radius: 18px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 1rem;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.04);
+    background: #fcfdf9;
+    color: #1f3d2d;
 }
 
 textarea {
-    width: 100%;
-    max-width: auto;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 4px;
-    box-sizing: border-box;
-    border: 1px solid var(--cor-cinza);
-    font-size: 14px;
-    box-shadow: var(--sombra-leve);
+    min-height: 150px;
     resize: vertical;
 }
 
-input{
-    width: 100%;
-    max-width: auto;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 4px;
-    box-sizing: border-box;
-    border: 1px solid var(--cor-cinza);
-    font-size: 14px;
-    box-shadow: var(--sombra-leve);
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: rgba(15, 86, 44, 0.35);
+    box-shadow: 0 0 0 4px rgba(15, 86, 44, 0.08);
 }
 
 button[type="submit"] {
     width: 100%;
-    padding: 12px;
+    padding: 16px 20px;
     background-color: var(--cor-texto);
     color: var(--cor-fundo);
     border: none;
     cursor: pointer;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     margin-top: 20px;
-    border-radius: 4px;
-    
+    border-radius: 18px;
+    box-shadow: 0 18px 38px rgba(0, 84, 33, 0.14);
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
 }
 
 table th,
 table td {
-    border: 3px solid var(--cor-texto2);
-    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
-    padding: 12px;
+    border: none;
+    padding: 18px 20px;
     text-align: left;
-    margin: 0px 5px;
+    background: transparent;
 }
 
+.laudos-table thead th {
+    background: rgba(1, 58, 27, 0.08);
+    color: #224f33;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid rgba(34, 79, 51, 0.12);
+}
 
+.laudos-table tbody tr {
+    transition: transform 0.2s ease;
+}
 
-table th {
-    background-color: var(--cor-cinza);
-    color: var(--cor-texto);
+.laudos-table tbody tr:hover {
+    transform: translateY(-2px);
+}
+
+.laudos-table tbody tr td {
+    border: none;
+    padding: 18px 24px;
+    vertical-align: middle;
+    background: #ffffff;
+}
+
+.laudos-table tbody tr td:first-child {
+    padding-left: 28px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.laudos-table tbody tr td:last-child {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.laudos-table tbody tr td:not(:last-child) {
+    border-right: 1px solid rgba(15, 86, 44, 0.08);
+}
+
+.action-button {
+    display: inline-flex;
+    padding: 10px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-right: 8px;
+    font-size: 0.95rem;
+}
+
+.edit-button {
+    background: rgba(9, 119, 65, 0.12);
+    color: #0f5d2f;
+}
+
+.delete-button {
+    background: rgba(210, 60, 60, 0.12);
+    color: #a1211e;
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: 30px 4%;
+    }
+
+    .page-hero {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .page-hero .hero-actions {
+        justify-content: flex-start;
+    }
+
+    .dashboard-grid,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .laudos-table tbody tr {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 12px;
+        padding: 18px 0;
+    }
+
+    .laudos-table tbody tr td {
+        padding: 14px 18px;
+        display: block;
+    }
 }
 
 table tr:nth-child(even) {
@@ -1261,56 +1280,6 @@ form button:hover {
 
 .table-responsive {
     overflow-x: auto;
-}
-
-.laudos-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 12px;
-}
-
-.laudos-table th,
-.laudos-table td {
-    padding: 16px 18px;
-    background: #ffffff;
-    color: #2a3a31;
-    border-radius: 16px;
-    text-align: left;
-    vertical-align: middle;
-}
-
-.laudos-table thead th {
-    background: transparent;
-    color: #5b6f63;
-    font-weight: 700;
-}
-
-.laudos-table tbody tr {
-    transition: transform 0.2s ease;
-}
-
-.laudos-table tbody tr:hover {
-    transform: translateY(-2px);
-}
-
-.action-button {
-    display: inline-flex;
-    padding: 10px 16px;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 700;
-    margin-right: 8px;
-    font-size: 0.95rem;
-}
-
-.edit-button {
-    background: #e6f7ea;
-    color: #0b6b3b;
-}
-
-.delete-button {
-    background: #ffecec;
-    color: #9c2a2a;
 }
 
 .status-pill {
