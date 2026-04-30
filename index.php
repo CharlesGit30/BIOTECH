@@ -16,16 +16,20 @@
     <?php include "/includes/header.php" ?>
 
 
-    <div class="inicio">
-        <div class="inicio-img">
-            <img src="/includes/imagens/banner.jpg" alt="Banner">
-            <div class="inicio-text">
-                <h2>BIOTECH</h2>
-                <p>Seu app reúne laudos digitais e controle de estoque em um único lugar, para que a equipe médica emita diagnósticos em segundos enquanto a farmácia acompanha cada comprimido que entra e sai, sem planilhas e sem sustos no fim do mês.</p>
-                <a href="/processamento/criar.php" class="btn-cta">Começar Agora</a>
+    <section class="page-hero home-hero">
+        <div class="hero-copy">
+            <span class="eyebrow">BIOTECH</span>
+            <h1>Laudos e controle de medicamentos com visual moderno</h1>
+            <p>Centralize diagnósticos, histórico de exames e relatórios em uma interface leve e fácil de usar.</p>
+            <div class="hero-actions">
+                <a href="/processamento/criar.php" class="btn-cta">Criar Laudo</a>
+                <a href="/processamento/listar.php" class="btn-secondary">Meus Laudos</a>
             </div>
         </div>
-    </div>
+        <div class="hero-visual">
+            <img src="/includes/imagens/banner.jpg" alt="Banner">
+        </div>
+    </section>
 
     <div class="logos">
         <div class="logos-wrapper">

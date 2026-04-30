@@ -1,44 +1,22 @@
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header -> Biotech</title>
-    <link rel="stylesheet" href="../includes/style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-</head>
-<body>
-    
-    <header>
-        <div class="logo">
-           <img src="/login/logo.png" alt="Logo da biotech" width="100px" height="100px"></img>
-        </div>
-
-        <div class="navbar">
-            <ul>
-                <li><a href="../index.php">Inicio</a>
-                    <a href="../biotech/processamento/listar.php">Laudos</a>
-                    <a href="../biotech/medicamentos/lista.php">Medicamentos</a>
-                    <a href="../biotech/processamento/relatorios.php">Relatorios</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="header-icons">
-        
-    <a href="#">
-    <?= isset($_SESSION['nome']) ? $_SESSION['nome'] : "<i class='bx bx-user'></i>" ?>
-    </a>
-            <a href="../biotech/login/sair.php"><i class='bx bx-log-out'></i></a>
-        </div>
-        
-    </header>
-
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-</body>
-</html>
+<?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+?>
+<header class="site-header">
+    <div class="logo">
+        <a href="/index.php"><img src="/login/logo.png" alt="Logo BioTech"></a>
+    </div>
+    <nav class="navbar">
+        <a href="/index.php">Início</a>
+        <a href="/processamento/listar.php">Laudos</a>
+        <a href="/medicamentos/lista.php">Medicamentos</a>
+        <a href="/processamento/relatorios.php">Relatórios</a>
+    </nav>
+    <div class="header-icons">
+        <a class="user-label" href="#">
+            <?= isset($_SESSION['nome']) ? htmlspecialchars($_SESSION['nome']) : "<i class='bx bx-user'></i>" ?>
+        </a>
+        <a href="/login/sair.php"><i class='bx bx-log-out'></i></a>
+    </div>
+</header>
