@@ -1081,7 +1081,7 @@ form button:hover {
 }
 
 .page-hero.home-hero {
-    min-height: 520px;
+    min-height: 380px;
     padding: 40px 60px;
     gap: 50px;
     background-image: linear-gradient(180deg, rgba(1, 58, 27, 0.95), rgba(1, 58, 27, 0.55)), url('/includes/imagens/banner.jpg');
@@ -1155,32 +1155,29 @@ form button:hover {
     padding: 28px 32px;
 }
 
-.page-hero .hero-text {
+.page-hero .hero-copy {
     max-width: 720px;
 }
 
+.hero-copy-simple {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.hero-logo {
+    font-size: clamp(2.4rem, 3vw, 3.8rem);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.12em;
+}
+
+.page-hero h1,
+.page-hero p,
 .page-hero .eyebrow {
-    display: inline-block;
-    margin-bottom: 12px;
-    color: #007741;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-size: 0.8rem;
-    font-weight: 700;
-}
-
-.page-hero h1 {
-    font-size: clamp(2rem, 2.5vw, 3rem);
-    color: var(--cor-texto);
-    margin-bottom: 14px;
-    line-height: 1.05;
-}
-
-.page-hero p {
-    max-width: 680px;
-    color: #3b4f44;
-    line-height: 1.75;
-    margin-bottom: 18px;
+    display: none;
 }
 
 .page-hero .hero-actions {
@@ -1210,7 +1207,8 @@ form button:hover {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 28px;
+    padding: 16px 34px;
+    min-width: 170px;
     border-radius: 999px;
     text-decoration: none;
     font-weight: 700;
@@ -1218,15 +1216,17 @@ form button:hover {
 }
 
 .btn-primary,
-.btn-cta {
-    background: var(--cor-texto);
+.btn-cta,
+.btn-secondary {
     color: var(--cor-fundo);
+    background: linear-gradient(135deg, #0d5c2c 0%, #0b4c27 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .btn-secondary {
-    background: #f2f6f2;
-    color: var(--cor-texto);
-    border: 1px solid rgba(0, 102, 51, 0.12);
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .btn-secondary:hover,

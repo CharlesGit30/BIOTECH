@@ -17,12 +17,10 @@
 
 
     <section class="page-hero home-hero">
-        <div class="hero-copy">
-            <span class="eyebrow">BIOTECH</span>
-            <h1>Laudos e controle de medicamentos com visual moderno</h1>
-            <p>Centralize diagnósticos, histórico de exames e relatórios em uma interface leve e fácil de usar.</p>
+        <div class="hero-copy hero-copy-simple">
+            <div class="hero-logo">BioTech</div>
             <div class="hero-actions">
-                <a href="/processamento/criar.php" class="btn-cta">Criar Laudo</a>
+                <a href="/processamento/criar.php" class="btn-primary">Criar Laudo</a>
                 <a href="/processamento/listar.php" class="btn-secondary">Meus Laudos</a>
             </div>
         </div>
