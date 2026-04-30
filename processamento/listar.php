@@ -1,5 +1,6 @@
+<?php session_start()?>
 <?php
-    include "../config.php";
+    include "../config/config.php";
     include "../includes/header.php";
 
     $resultado = $conexao->query("SELECT * FROM laudos ORDER BY data_laudo DESC");
@@ -26,8 +27,8 @@
         <th>Exame</th>
         <th>Data do Laudo</th>
         <th>Diagnostico</th>
-        <th>Observação</th>
-        
+        <th>Alterar</th>
+        <th>Excluir</th>       
     </tr>
 </div>
 
@@ -42,8 +43,7 @@
         <td><?= $row['medico']  ?></td>
         <td><?= $row['exame']  ?></td>
         <td><?= $row['data_laudo']  ?></td>
-        <td><?= $row['diagnostico']  ?></td>
-        <td><?= $row['observacao']  ?></td> 
+        <td><?= $row['diagnostico']  ?></td> 
         <td><a href="editar.php?id=<?= $row['id'] ?>" class="editar-laudo">Editar</a></td>
         <td><a href="excluir.php?id=<?= $row['id'] ?>" class="excluir-laudo">Excluir</a></td>   
     </tr>

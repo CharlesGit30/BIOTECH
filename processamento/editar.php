@@ -1,5 +1,8 @@
+<?php session_start()?>
+
 <?php
-include '../config.php';
+include '../config/config.php';
+include "../includes/header.php"; 
 
 $id = $_GET['id'];
 
@@ -38,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 </head>
 <body>  
 
-<?php include "../includes/header.php"; ?>
+
 <h2 class="editar-laudo">Editar Laudo</h2>
 
 <div class="formulario">

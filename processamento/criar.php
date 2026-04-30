@@ -1,7 +1,10 @@
+<?php session_start()?>
 <?php 
-    include '../config.php';
+    include '../config/config.php';
 
     include "../includes/header.php";
+
+  
 
     if ($_SERVER['REQUEST_METHOD'] === "POST") {
         
@@ -12,8 +15,8 @@
         $diagnostico = $_POST['diagnostico'];
         $observacao = $_POST['observacao'];
 
-        $acao = $conexao->prepare("INSERT INTO laudos (paciente, medico, exame, data_laudo, diagnostico, observacao) VALUES (?, ?, ?, ?, ?, ?)");
-        $acao->bind_param("ssssss", $paciente, $medico, $exame, $data_laudo, $diagnostico, $observacao);
+        $acao = $conexao->prepare("INSERT INTO laudos (paciente, medico, exame, data_laudo, diagnostico) VALUES (?, ?, ?, ?, ?)");
+        $acao->bind_param("sssss", $paciente, $medico, $exame, $data_laudo, $diagnostico);
         $acao->execute();
 
         header("Location: ../processamento/listar.php");
@@ -43,11 +46,10 @@
     <input type="date" id="data_laudo" name="data_laudo"> 
     <label for="diagnostico">Diagnóstico:</label>
     <textarea id="diagnostico" name="diagnostico"></textarea>
-    <label for="observacao">Observações:</label>
-    <textarea id="observacao" name="observacao"></textarea>
     <button type="submit">Cadastrar</button>
 </form>
+</div>
+<?php include "../includes/footer.php";  ?>
 
-<?php include "../includes/footer.php"; ?>
 </body>
 </html>
