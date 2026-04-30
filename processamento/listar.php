@@ -1,10 +1,13 @@
-<?php session_start()?>
 <?php
-    include "../config/config.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/config/config.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
 
-    $resultado = $conexao->query("SELECT * FROM laudos ORDER BY data_laudo DESC");
+$resultado = $conexao->query("SELECT * FROM laudos ORDER BY data_laudo DESC");
+
+if (!$resultado) {
+    die("Erro na consulta: " . $conexao->error);
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
