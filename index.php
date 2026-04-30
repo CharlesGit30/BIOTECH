@@ -26,9 +26,6 @@
                 <a href="/processamento/listar.php" class="btn-secondary">Meus Laudos</a>
             </div>
         </div>
-        <div class="hero-visual">
-            <img src="/includes/imagens/banner.jpg" alt="Banner">
-        </div>
     </section>
 
     <div class="logos">
