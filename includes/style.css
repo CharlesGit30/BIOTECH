@@ -7,6 +7,7 @@
     font-family: 'roboto', sans-serif;
     list-style: none;
     border: none;
+    overflow: visible;
     transition: all 0.3s ease;
 }
 
@@ -21,6 +22,9 @@
 
 body {
     min-height: 100vh;
+        height: 100%;
+        margin: 0;
+    
     background-color: var(--cor-fundo);
 }
 
@@ -42,6 +46,8 @@ header {
     justify-content: space-between;
     box-shadow: var(--sombra);
     position: fixed;
+    top: 0;
+    left: 0;
 }
 
 header .logo {
@@ -86,8 +92,7 @@ header .logo img {
 .header-icons a {
     background-color: var(--cor-fundo);
     color: var(--cor-texto2);
-    padding: 15px;
-    border-radius: 50%;
+    padding: 15px 60px;
     box-shadow: var(--sombra);
     display: flex;
     align-items: center;
@@ -110,6 +115,7 @@ header .logo img {
     header {
         flex-direction: column;
         padding: 15px;
+        
     }
 
     .navbar {
@@ -176,83 +182,55 @@ footer {
 /*--------------------------------------------*/
 
 .inicio {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 7%;
-    background: linear-gradient(135deg, var(--cor-fundo) 0%, #f0f9f0 100%);
+    width: 100%;
+    height: 100vh;
+    position: relative;
 }
 
 .inicio-img {
-    position: relative;
     width: 100%;
-    height: 600px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 102, 51, 0.15);
-    margin-top: 50px;
+    height: 100%;
+    position: relative;
 }
 
 .inicio-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-}
-
-.inicio-img:hover img {
-    transform: scale(1.05);
+    object-fit: cover; 
+    display: block;
 }
 
 .inicio-text {
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    padding: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 12px 0 0 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    max-width: 700px;
+    padding: 20px;
 }
 
 .inicio-text h2 {
-    font-size: 64px;
-    color: var(--cor-fundo);
-    margin-bottom: 20px;
-    font-weight: 700;
-    letter-spacing: -1px;
-    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.8);
-    animation: slideInLeft 0.8s ease;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: var(--cor-texto);
 }
 
 .inicio-text p {
-    font-size: 16px;
+    font-size: 1.2rem;
+    line-height: 1.5;
     color: var(--cor-texto2);
-    line-height: 1.8;
-    text-align: left;
-    margin-bottom: 30px;
-    text-shadow: 1px 0px 4px rgba(255, 255, 255, 0.7);
-    animation: slideInLeft 0.8s ease 0.2s backwards;
-    max-width: 90%;
 }
 
 .btn-cta {
     display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
     background: var(--cor-texto);
-    padding: 30px 45px;
-    width: fit-content;
     color: var(--cor-fundo);
     text-decoration: none;
-    border-radius: 15px;
-    font-weight: 600;
-    font-size: 15px;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border: 2px solid var(--cor-fundo);
-    cursor: pointer;
-    box-shadow: 0 8px 20px rgba(0, 102, 51, 0.25);
-    animation: slideInLeft 0.8s ease 0.4s backwards;
+    border-radius: 8px;
 }
 
 .btn-cta:hover {
@@ -629,12 +607,22 @@ button:active {
     justify-content: center;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0, 102, 51, 0.2);
-    border-color: var(--cor-texto);
-    background: linear-gradient(135deg, var(--cor-fundo) 0%, #f0f9f0 100%);
+.card-2 {
+    background: linear-gradient(135deg, var(--cor-fundo) 0%, #f9f9f9 100%);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 2px solid transparent;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+
 
 .card-icon {
     font-size: 60px;
@@ -643,10 +631,7 @@ button:active {
     transition: all 0.4s ease;
 }
 
-.card:hover .card-icon {
-    transform: scale(1.15) rotate(10deg);
-    filter: drop-shadow(0 4px 8px rgba(0, 102, 51, 0.3));
-}
+
 
 .card h3 {
     font-size: 24px;
@@ -656,7 +641,24 @@ button:active {
     letter-spacing: -0.5px;
 }
 
+
+.card-2 h3 {
+    font-size: 24px;
+    color: var(--cor-texto);
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
 .card p {
+    font-size: 14px;
+    color: var(--cor-texto2);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+.card-2 p {
     font-size: 14px;
     color: var(--cor-texto2);
     line-height: 1.6;
@@ -680,17 +682,8 @@ button:active {
     margin-top: auto;
 }
 
-.btn-card:hover {
-    background: linear-gradient(135deg, var(--cor-fundo) 0%, #e0e0e0 100%);
-    color: var(--cor-texto);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 102, 51, 0.3);
-    border-color: var(--cor-texto);
-}
 
-.btn-card:active {
-    transform: translateY(-1px);
-}
+
 
 @media (max-width: 768px) {
     .container {
@@ -768,13 +761,27 @@ button:active {
 /*-----------------------------------------*/
 
 .criar-laudo{
-   
+  
     font-size: 40px;
     font-weight: 700;
     color: var(--cor-texto);
     justify-content: center;
     width: fit-content;
     margin: 0 auto;
+}
+
+.card{
+    background-image: url(../includes/imagens/laudo-img.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-2{
+    background-image: url(../includes/imagens/editarlaudo-img.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .novo-laudo {
@@ -894,16 +901,70 @@ table tr:nth-child(even) {
 }
 
 .formulario{
-    background-color: var(--cor-cinza);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: var(--sombra-leve);
-    margin: 20px;
-    margin-bottom: 20px;
-    width: 1000px;
-    height: 600px;
-    margin-left: 490px;
+    
+        background-color: var(--cor-cinza);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: var(--sombra-leve);
+        margin: 40px auto;
+        max-width: 800px;
+        width: 100%;
+    
 }
 
 /*-----------------------------------------*/
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* 👈 chave da solução */
+    gap: 12px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form label {
+    width: 100%;
+    max-width: 400px;
+    font-weight: 600;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+form button {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    background: #00a859;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+form button:hover {
+    background: #008f49;
+}
+
+.formulario{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+    background-color: var(--cor-cinza);
+}

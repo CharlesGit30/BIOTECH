@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footer -> Biotech</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../includes/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    
+    <br><br><br><br><br>
     <footer>
         <div class="sociais">
             <a href=""><i class='bx bxl-instagram' ></i></a>
