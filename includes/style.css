@@ -788,19 +788,27 @@ button[type="submit"]:hover {
     transform: translateY(-2px);
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
 table th,
 table td {
     border: none;
-    padding: 18px 20px;
+    padding: 14px 12px;
     text-align: left;
     background: transparent;
+    white-space: normal;
+    word-break: break-word;
 }
 
 .laudos-table thead th {
     background: rgba(1, 58, 27, 0.08);
     color: #224f33;
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     border-bottom: 1px solid rgba(34, 79, 51, 0.12);
@@ -816,24 +824,57 @@ table td {
 
 .laudos-table tbody tr td {
     border: none;
-    padding: 18px 24px;
+    padding: 14px 12px;
     vertical-align: middle;
     background: #ffffff;
 }
 
 .laudos-table tbody tr td:first-child {
-    padding-left: 28px;
+    padding-left: 16px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
 
 .laudos-table tbody tr td:last-child {
+    padding-right: 16px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 
 .laudos-table tbody tr td:not(:last-child) {
     border-right: 1px solid rgba(15, 86, 44, 0.08);
+}
+
+.laudos-table th:nth-child(1),
+.laudos-table td:nth-child(1) { width: 8%; }
+.laudos-table th:nth-child(2),
+.laudos-table td:nth-child(2) { width: 16%; }
+.laudos-table th:nth-child(3),
+.laudos-table td:nth-child(3) { width: 16%; }
+.laudos-table th:nth-child(4),
+.laudos-table td:nth-child(4) { width: 18%; }
+.laudos-table th:nth-child(5),
+.laudos-table td:nth-child(5) { width: 14%; }
+.laudos-table th:nth-child(6),
+.laudos-table td:nth-child(6) { width: 24%; }
+.laudos-table th:nth-child(7),
+.laudos-table td:nth-child(7) { width: 14%; }
+
+.table-responsive {
+    overflow-x: hidden;
+}
+
+@media (max-width: 1200px) {
+    .laudos-table thead th {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .laudos-table th,
+    .laudos-table td {
+        padding: 12px 10px;
+    }
 }
 
 .action-button {
@@ -980,9 +1021,9 @@ form textarea {
 }
 
 form button {
-    width: 100%;
-    max-width: 420px;
-    padding: 16px 20px;
+    width: auto;
+    min-width: 260px;
+    padding: 16px 34px;
     background: linear-gradient(135deg, #0f5b2c, #047936);
     color: var(--cor-fundo);
     border: none;
@@ -990,6 +1031,8 @@ form button {
     cursor: pointer;
     font-weight: 800;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin: 0 auto;
+    display: block;
 }
 
 form button:hover {
@@ -1230,16 +1273,16 @@ form button:hover {
 
 .btn-secondary {
     color: #ffffff;
-    background: rgba(14, 82, 39, 0.22);
+    background: linear-gradient(135deg, #178140 0%, #10592f 100%);
     border: 1px solid rgba(255, 255, 255, 0.24);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 36px rgba(16, 90, 48, 0.22);
 }
 
 .btn-secondary:hover,
 .btn-primary:hover,
 .btn-cta:hover {
     transform: translateY(-3px);
-    box-shadow: 0 16px 40px rgba(0, 102, 51, 0.14);
+    box-shadow: 0 18px 44px rgba(0, 102, 51, 0.24);
 }
 
 .table-card,
