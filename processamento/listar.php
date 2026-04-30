@@ -1,6 +1,8 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "/config/config.php";
-include $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
+$root = !empty($_SERVER['DOCUMENT_ROOT']) ? $_SERVER['DOCUMENT_ROOT'] : '/var/www/html';
+
+include $root . "/config/config.php";
+include $root . "/includes/header.php";
 
 $resultado = $conexao->query("SELECT * FROM laudos ORDER BY data_laudo DESC");
 
@@ -8,6 +10,7 @@ if (!$resultado) {
     die("Erro na consulta: " . $conexao->error);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -62,11 +65,12 @@ if (!$resultado) {
          <a href="excluir.php?id=<?= $row['id'] ?>" class="excluir-laudo" onclick="return confirm('Tem certeza que deseja excluir este laudo?')">Excluir</a>
         </td>
     </tr>
+    <?php endwhile; ?>
            </table>
             </div>
         </section>
     </main>
-<?php include "../includes/footer.php"; ?>
-</body>
+    
+ <?php include $root . "/includes/footer.php"; ?>
+ </body>
 </html>
-
