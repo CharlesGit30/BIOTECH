@@ -11,4 +11,4 @@ $banco = 'biotech';
 $conexao = new mysqli($host, $usuario, $senha, $banco);
 ?>>
 
->>>>>>> 741ce53911ac258dd63661a61b3bb49086816fdc
+ 741ce53911ac258dd63661a61b3bb49086816fdc
