@@ -33,6 +33,45 @@ if (!$resultado) {
             </div>
         </section>
 
+
+        <a href="/processamento/criar.php" class="novo-laudo">+ Novo Laudo</a>
+    </section>
+
+    <section class="laudos-card">
+        <div class="table-responsive">
+            <table class="laudos-table">
+    <tr>
+        <th>ID</th>
+        <th>Paciente</th>
+        <th>Médico</th>
+        <th>Exame</th>
+        <th>Data do Laudo</th>
+        <th>Diagnóstico</th>
+        <th>Ações</th>
+          
+    </tr>
+</div>
+
+
+    <?php
+        while ($row = $resultado->fetch_assoc()) :
+    ?>
+
+    <tr>
+       <td class="id-col">#<?= $row['id'] ?></td>
+         <td><?= htmlspecialchars($row['paciente']) ?></td>
+         <td><?= htmlspecialchars($row['medico']) ?></td>
+         <td><?= htmlspecialchars($row['exame']) ?></td>
+         <td><?= date('d/m/Y', strtotime($row['data_laudo'])) ?></td>
+         <td><?= htmlspecialchars($row['diagnostico']) ?></td>
+         <td class="acoes-laudo">
+         <a href="editar.php?id=<?= $row['id'] ?>" class="editar-laudo">Editar</a>
+         <a href="excluir.php?id=<?= $row['id'] ?>" class="excluir-laudo" onclick="return confirm('Tem certeza que deseja excluir este laudo?')">Excluir</a>
+        </td>
+    </tr>
+             <?php endwhile; ?>
+           </table>
+
         <section class="table-card">
             <div class="table-responsive">
                 <table class="laudos-table">
@@ -64,6 +103,7 @@ if (!$resultado) {
                         <?php endwhile; ?>
                     </tbody>
                 </table>
+>>>>>>> 8e7b95b75d4708ab156ca5caf9fedacb2e944250
             </div>
         </section>
     </main>
